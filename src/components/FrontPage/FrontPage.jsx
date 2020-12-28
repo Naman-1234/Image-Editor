@@ -19,6 +19,7 @@ export default function FrontPage()
             })
         }
         );
+        console.log(obj);
         setAdded(true);
     }
 

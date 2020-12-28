@@ -84,12 +84,18 @@ function Edit(props) {
   const [arr,setarr]=useState([]);
   
   function handleSliderChange({ target }) {
-    setOptions(prevOptions => {
+    
+      setOptions(prevOptions => {
       return prevOptions.map((option, index) => {
         if (index !== selectedOptionIndex) return option
         return { ...option, value: target.value }
       })
     })
+  //   src.map((source)=>{
+  //      arr.push(<img src={source} alt="EditImage" className="img" style={getImageStyle()}/>)
+  //       })
+  //  setarr([])
+    
   }
 
   function getImageStyle() {
@@ -114,7 +120,17 @@ function Edit(props) {
   
     document.body.removeChild(link);
   }
-
+  function styleimage(index,source,style)
+  {
+    console.log(style);
+    console.log(style());
+    var canvas=document.getElementById(source);
+    var ctx = canvas.getContext('2d');
+    const obj= style()
+    ctx.filter =obj.filter
+    var img = document.getElementById(index);
+    ctx.drawImage(img,0,0, '400', '400');
+  }
   return (
     <div className="container">
       <div className="sidebar">
@@ -139,8 +155,16 @@ function Edit(props) {
       <button onClick={e=>{downloadAll(src)}}>Download Photos </button>
      </div>
       <div>{
-        src.map((source)=>{
-                return <img src={source} alt="EditImage" className="img" style={getImageStyle()}/>
+        src.map((source,index)=>{
+            
+            return  (<div>
+            
+            <img src={source} alt="EditImage" className="img" style={getImageStyle()} onClick={()=>{styleimage(index, source,getImageStyle)}} id={index} />
+              <canvas id={source}></canvas>
+              
+            </div>
+            );
+            
               })
                 }
       </div>
