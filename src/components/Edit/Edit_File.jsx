@@ -122,14 +122,15 @@ function Edit(props) {
   }
   function styleimage(index,source,style)
   {
-    console.log(style);
-    console.log(style());
     var canvas=document.getElementById(source);
     var ctx = canvas.getContext('2d');
     const obj= style()
     ctx.filter =obj.filter
     var img = document.getElementById(index);
-    ctx.drawImage(img,0,0, '400', '400');
+    ctx.drawImage(img,0,0, canvas.height,canvas.width);
+    const obj1=canvas.toDataURL('image/jpeg');
+    arr.push(obj1);
+    return obj1;
   }
   return (
     <div className="container">
@@ -152,15 +153,20 @@ function Edit(props) {
         value={selectedOption.value}
         handleChange={handleSliderChange}
       />
-      <button onClick={e=>{downloadAll(src)}}>Download Photos </button>
+      <button onClick={e=>{downloadAll(arr)}}>Download Photos </button>
      </div>
       <div>{
         src.map((source,index)=>{
             
             return  (<div>
             
-            <img src={source} alt="EditImage" className="img" style={getImageStyle()} onClick={()=>{styleimage(index, source,getImageStyle)}} id={index} />
-              <canvas id={source}></canvas>
+            <img src={source} alt="EditImage" className="img" style={getImageStyle()} onClick={()=>{
+              
+              
+              styleimage(index, source,getImageStyle)}
+              
+              } id={index} />
+              <canvas id={source} className="canvasObject" height="300px" width="300px"></canvas>
               
             </div>
             );
