@@ -82,9 +82,9 @@ function Edit(props) {
   const [src,setsrc]=useState(props.Sources);
   const selectedOption = options[selectedOptionIndex];
   const [arr,setarr]=useState([]);
+  const [changed,setchanged]=useState(false);
   
   function handleSliderChange({ target }) {
-    
       setOptions(prevOptions => {
       return prevOptions.map((option, index) => {
         if (index !== selectedOptionIndex) return option
@@ -113,7 +113,7 @@ function Edit(props) {
   
     document.body.appendChild(link);
   
-    for (var i = 0; i < urls.length; i++) {
+    for (var i = 0; i < urls.length/2; i++) {
       link.setAttribute('href', urls[i]);
       link.click();
     }
@@ -130,7 +130,7 @@ function Edit(props) {
     ctx.drawImage(img,0,0, canvas.height,canvas.width);
     const obj1=canvas.toDataURL('image/jpeg');
     arr.push(obj1);
-    return obj1;
+
   }
   return (
     <div className="container">
@@ -154,18 +154,16 @@ function Edit(props) {
         handleChange={handleSliderChange}
       />
       <button onClick={e=>{downloadAll(arr)}}>Download Photos </button>
+      <button onClick={()=>{setchanged(true)}}>CChanged</button>
      </div>
       <div>{
         src.map((source,index)=>{
             
             return  (<div>
-            
-            <img src={source} alt="EditImage" className="img" style={getImageStyle()} onClick={()=>{
+              {changed && styleimage(index, source,getImageStyle)}
               
-              
-              styleimage(index, source,getImageStyle)}
-              
-              } id={index} />
+              <img src={source} alt="EditImage" className="img" style={getImageStyle()}
+              id={index} />
               <canvas id={source} className="canvasObject" height="300px" width="300px"></canvas>
               
             </div>
