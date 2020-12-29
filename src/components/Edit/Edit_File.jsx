@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Slider from './Slider'
 import SideBarItem from './SideBarItem';
 import "./Edit.css";
+import {Link} from "react-router-dom";
+import JSZip from "jszip";
+import {saveAs} from "file-saver";
 const DEFAULT_OPTIONS = [
   {
     name: 'Brightness',
@@ -79,7 +82,9 @@ const DEFAULT_OPTIONS = [
 function Edit(props) {
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
   const [options, setOptions] = useState(DEFAULT_OPTIONS)
-  const [src,setsrc]=useState(props.Sources);
+  // const [src,setsrc]=useState(props.Sources);
+  const [src,setsrc]=useState(props.location.state.Sources);
+  console.log(props.location.state.Sources);
   const selectedOption = options[selectedOptionIndex];
   const [arr,setarr]=useState([]);
   const [changed,setchanged]=useState(false);
@@ -97,6 +102,7 @@ function Edit(props) {
   //  setarr([])
     
   }
+  <Link to="/Downloaded"><button id="go_to_download">Click me </button></Link>
 
   function getImageStyle() {
     const filters = options.map(option => {
@@ -105,20 +111,40 @@ function Edit(props) {
 
     return { filter: filters.join(' ') }
   }
-  function downloadAll(urls) {
-    var link = document.createElement('a');
+  function removeHeaderBase64(base64) {
+    return base64.substr(base64.indexOf(";base64,") + ";base64,".length)
+  }
+  function downloadAll(urls) 
+  {
+    // var link = document.createElement('a');
   
-    link.setAttribute('download', 'Updated-Image');
-    link.style.display = 'none';
+    // link.setAttribute('download', 'Updated-Image');
+    // link.style.display = 'none';
   
-    document.body.appendChild(link);
+    // document.body.appendChild(link);
   
-    for (var i = 0; i < urls.length/2; i++) {
-      link.setAttribute('href', urls[i]);
-      link.click();
-    }
+    // for (var i = 0; i < urls.length/2; i++) {
+    //   link.setAttribute('href', urls[i]);
+    //   link.click();
+    // }
   
-    document.body.removeChild(link);
+    // document.body.removeChild(link);
+    
+    let zip=new JSZip();
+    var img=zip.folder("Images");
+    let count=0;
+    for (var i = 0; i < urls.length/2; i++)
+    {
+      img.file(count+'.jpeg',removeHeaderBase64(urls[i]),{base64:true});
+      count++;
+    };
+     zip.generateAsync({type:"blob"}).then(function(content) {
+      saveAs(content, "Images.zip");
+
+    // document.getElementById('go_to_download').click();
+   
+  });
+
   }
   function styleimage(index,source,style)
   {
@@ -130,7 +156,6 @@ function Edit(props) {
     ctx.drawImage(img,0,0, canvas.height,canvas.width);
     const obj1=canvas.toDataURL('image/jpeg');
     arr.push(obj1);
-
   }
   return (
     <div className="container">

@@ -1,14 +1,13 @@
 import React,{useState} from "react";
-import ReactCrop from "react-image-crop";
-import 'react-image-crop/dist/ReactCrop.css';
 import "./FrontPage.css";
 import Edit from "../Edit/Edit_File";
+import {Link} from "react-router-dom";
 //Some important things,every image is getting cropped by same dimensions due to the reason is due to the  use of a single variable crop for all the images
 export default function FrontPage()
 {
 
     const [src,setsrc]=useState([]);
-    const [added,setAdded]=useState(false);
+    // const [added,setAdded]=useState(false);
     function handleClick(obj)
     {
         Object.keys(obj).map((key)=>{
@@ -19,31 +18,24 @@ export default function FrontPage()
             })
         }
         );
-        console.log(obj);
-        setAdded(true);
+        // setAdded(true);
     }
 
 return (
     <div className="frontpage">
       
-       {added===false && <div className="inputField">
+       {/* {added===false &&  */}
+       <div className="inputField">
             <h1> Image-Editor</h1>
         <input type="file" multiple name="images" accept="image/*" id="img" onChange={e=>handleClick(e.target.files)} ></input>
         <label for="img">Select Files</label>
         </div>
-        }
-
-
-        {/* <div >
-        {added===true&&(
-                src.map((source)=>{
-                return  <img src={source} alt="EditImage" className="img"/>
-                }
-            ))}
-        </div> */}
-        <div className="edit">
+        {/* } */}
+        {/* <div className="edit">
             {added && <Edit Sources={src}/>}
-        </div>
+        </div> */}
+        <Link to={{pathname:'/Edit', state:{Sources:src}}}><button       
+        >Edit Photos</button></Link>
 
     </div>
 
