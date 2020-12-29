@@ -1,25 +1,28 @@
 *, *::before, *::after {
     box-sizing: border-box;
+    
   }
   
   body {
     margin: 0;
   }
+
   .img
   {
     display: block;
-    width: 40%;
-    height:40%; 
+    width: 42%;
+    height:42%; 
   }
   .slider
   {
     margin:0 auto;
     width:70vw;
+    
   }
   .sidebar {
     grid-area: sidebar;
-    background-color: hsl(265, 100%, 86%);
-    border-left: 1px solid hsl(265, 100%, 56%);
+    background-color: hsl(46, 97%, 25%);
+    border-left: 1px solid hsl(46, 97%, 25%);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -29,30 +32,23 @@
     cursor: pointer;
     border: none;
     outline: none;
-    background-color: hsl(265, 100%, 86%);
+    background-color: hsl(46, 97%, 25%);
     padding: 1rem;
     position: relative;
     transition: background-color 150ms;
+    color:#fff;
+    font-size: 1.5em;
     /* border-right:2px solid #fff; */
   }
   
-  .sidebar-item:hover, .sidebar-item:focus {
-    background-color: hsl(265, 100%, 76%);
+  .sidebar-item:hover, .si  debar-item:focus {
+    background-color: hsl(64, 93%, 36%);
   }
   
   .sidebar-item.active {
-    background-color: hsl(265, 100%, 70%);
+    background-color:  hsl(64, 93%, 36%);
   }
   
-  /* .sidebar-item::after {
-    content: '';
-    position: absolute;
-    width: 80%;
-    left: 10%;
-    bottom: 0;
-    height: 1px;
-    background-color: hsl(265, 100%, 46%);
-  } */
   
   .sidebar-item:last-child::after {
     display: none;
@@ -65,4 +61,10 @@
   #go_to_download
 {
   display: none;
+}
+
+.btn 
+{
+  font-size:1.5em;
+
 }

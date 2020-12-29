@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import {BrowserRouter as Router,Route} from "react-router-dom";
 import FrontPage from './components/FrontPage/FrontPage';
 import Edit_File from "./components/Edit/Edit_File";

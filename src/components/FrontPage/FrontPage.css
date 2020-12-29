@@ -27,8 +27,44 @@ font-family: 'Open Sans', sans-serif;
   display: grid;
   place-items:center;
 }
+.containers
+{
+  display: flex;
+  flex-direction: row;
+}
+.inputField
+{
+  flex:1;
+  background-color:#6C63FF;
+  height:100vh;
+  color:#fff;
+}
+.img-div
+{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-div img{
+  width:80%;
+  height:100%;
+}
+#form
+{
+ display: grid;
+ place-items: center;
+}
 input[type=file]
 {
-  color:transparent;
-  margin-left: 10%;
+border-radius:12%;
+}
+#form h1
+{
+  font-size:5.5em;
+}
+#form button{
+  width: 15vw;
+  font-size: 1.7em;
+  border-radius: 11px;
 }

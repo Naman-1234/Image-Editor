@@ -5,6 +5,7 @@ import "./Edit.css";
 import {Link} from "react-router-dom";
 import JSZip from "jszip";
 import {saveAs} from "file-saver";
+import 'bootstrap/dist/css/bootstrap.min.css';
 const DEFAULT_OPTIONS = [
   {
     name: 'Brightness',
@@ -82,9 +83,7 @@ const DEFAULT_OPTIONS = [
 function Edit(props) {
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
   const [options, setOptions] = useState(DEFAULT_OPTIONS)
-  // const [src,setsrc]=useState(props.Sources);
   const [src,setsrc]=useState(props.location.state.Sources);
-  console.log(props.location.state.Sources);
   const selectedOption = options[selectedOptionIndex];
   const [arr,setarr]=useState([]);
   const [changed,setchanged]=useState(false);
@@ -137,7 +136,7 @@ function Edit(props) {
     arr.push(obj1);
   }
   return (
-    <div className="container">
+    <div className="container_Edit">
       <div className="sidebar">
         {options.map((option, index) => {
           return (
@@ -158,12 +157,16 @@ function Edit(props) {
         handleChange={handleSliderChange}
       />
       <Link to="/Downloaded"><button id="go_to_download">Click me </button></Link>
-      <button onClick={
+      <div className="row">
+      <div className="col-sm-6">
+      <button className="btn btn-primary" onClick={
         e=>{downloadAll(arr)}
         }>Download Photos </button>
-      <button onClick={()=>{setchanged(true)  }}>CChanged</button>
+        </div>
+      <button className="btn btn-primary" onClick={()=>{setchanged(true)  }}>Click Here First then click on Download Photos</button>
+      </div>
      </div>
-      <div>{
+      <div className="Photos">{
         src.map((source,index)=>{
             
             return  (<div>
