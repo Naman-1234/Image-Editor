@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,4 +71,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # Image-Editor
 This is a react app in which you upload multiple images, then you edit only one of the image and app will edit the rest of the images for you
->>>>>>> 6f821e719a1b9dad0d2f0ff7d05e96a6d730a876

@@ -83,9 +83,9 @@ const DEFAULT_OPTIONS = [
 function Edit(props) {
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(0)
   const [options, setOptions] = useState(DEFAULT_OPTIONS)
-  const [src,setsrc]=useState(props.location.state.Sources);
+  const [src]=useState(props.location.state.Sources);
   const selectedOption = options[selectedOptionIndex];
-  const [arr,setarr]=useState([]);
+  const [arr]=useState([]);
   const [changed,setchanged]=useState(false);
   
   function handleSliderChange({ target }) {
