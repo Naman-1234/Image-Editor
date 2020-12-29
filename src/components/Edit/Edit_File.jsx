@@ -96,13 +96,8 @@ function Edit(props) {
         return { ...option, value: target.value }
       })
     })
-  //   src.map((source)=>{
-  //      arr.push(<img src={source} alt="EditImage" className="img" style={getImageStyle()}/>)
-  //       })
-  //  setarr([])
-    
   }
-  <Link to="/Downloaded"><button id="go_to_download">Click me </button></Link>
+  
 
   function getImageStyle() {
     const filters = options.map(option => {
@@ -115,21 +110,7 @@ function Edit(props) {
     return base64.substr(base64.indexOf(";base64,") + ";base64,".length)
   }
   function downloadAll(urls) 
-  {
-    // var link = document.createElement('a');
-  
-    // link.setAttribute('download', 'Updated-Image');
-    // link.style.display = 'none';
-  
-    // document.body.appendChild(link);
-  
-    // for (var i = 0; i < urls.length/2; i++) {
-    //   link.setAttribute('href', urls[i]);
-    //   link.click();
-    // }
-  
-    // document.body.removeChild(link);
-    
+  {    
     let zip=new JSZip();
     var img=zip.folder("Images");
     let count=0;
@@ -139,12 +120,10 @@ function Edit(props) {
       count++;
     };
      zip.generateAsync({type:"blob"}).then(function(content) {
-      saveAs(content, "Images.zip");
-
-    // document.getElementById('go_to_download').click();
-   
+      saveAs(content, "Images.zip");   
   });
-
+  // window.location.reload()
+  document.getElementById('go_to_download').click()
   }
   function styleimage(index,source,style)
   {
@@ -153,7 +132,7 @@ function Edit(props) {
     const obj= style()
     ctx.filter =obj.filter
     var img = document.getElementById(index);
-    ctx.drawImage(img,0,0, canvas.height,canvas.width);
+    ctx.drawImage(img,0,0,700,700);
     const obj1=canvas.toDataURL('image/jpeg');
     arr.push(obj1);
   }
@@ -178,8 +157,11 @@ function Edit(props) {
         value={selectedOption.value}
         handleChange={handleSliderChange}
       />
-      <button onClick={e=>{downloadAll(arr)}}>Download Photos </button>
-      <button onClick={()=>{setchanged(true)}}>CChanged</button>
+      <Link to="/Downloaded"><button id="go_to_download">Click me </button></Link>
+      <button onClick={
+        e=>{downloadAll(arr)}
+        }>Download Photos </button>
+      <button onClick={()=>{setchanged(true)  }}>CChanged</button>
      </div>
       <div>{
         src.map((source,index)=>{
@@ -189,7 +171,7 @@ function Edit(props) {
               
               <img src={source} alt="EditImage" className="img" style={getImageStyle()}
               id={index} />
-              <canvas id={source} className="canvasObject" height="300px" width="300px"></canvas>
+              <canvas id={source} className="canvasObject" height="700px" width="700px"></canvas>
               
             </div>
             );
