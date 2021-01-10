@@ -113,7 +113,7 @@ function Edit(props) {
     let zip=new JSZip();
     var img=zip.folder("Images");
     let count=0;
-    for (var i = 0; i < urls.length/2; i++)
+    for (var i = 0; i < urls.length; i++)
     {
       img.file(count+'.jpeg',removeHeaderBase64(urls[i]),{base64:true});
       count++;
