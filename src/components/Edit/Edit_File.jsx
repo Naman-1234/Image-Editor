@@ -157,14 +157,13 @@ function Edit(props) {
         handleChange={handleSliderChange}
       />
       <Link to="/Downloaded"><button id="go_to_download">Click me </button></Link>
-      <div className="row">
-      <div className="col-sm-6">
-      <button className="btn btn-primary" onClick={
-        e=>{downloadAll(arr)}
+      <div className="text-center">
+      <button className="btn btn-primary btn-lg" onClick= {
+       async  (e)=>{
+          await setchanged(true)
+          downloadAll(arr)}
         }>Download Photos </button>
         </div>
-      <button className="btn btn-primary" onClick={()=>{setchanged(true)  }}>Click Here First then click on Download Photos</button>
-      </div>
      </div>
       <div className="Photos">{
         src.map((source,index)=>{
