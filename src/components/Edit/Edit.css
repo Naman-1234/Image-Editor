@@ -38,7 +38,6 @@
     transition: background-color 150ms;
     color:#fff;
     font-size: 1.5em;
-    /* border-right:2px solid #fff; */
   }
   
   .sidebar-item:hover, .si  debar-item:focus {
@@ -67,4 +66,18 @@
 {
   font-size:1.5em;
 
+}
+@media (min-width:686px) and (max-width:880px)
+{
+  .sidebar-item {
+    font-size:1.1em;
+  } 
+}
+@media (min-width:500px) and (max-width:687px)
+{
+  .sidebar-item {
+    font-size:1em;
+    padding:0.5rem;
+
+  } 
 }

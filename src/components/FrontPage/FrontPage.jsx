@@ -7,7 +7,6 @@ export default function FrontPage()
 {
 
     const [src,setsrc]=useState([]);
-    // const [added,setAdded]=useState(false);
     function handleClick(obj)
     {
         Object.keys(obj).map((key)=>{
@@ -16,6 +15,7 @@ export default function FrontPage()
 
             return [...prevvalue,URL.createObjectURL(obj[key])];
             })
+
             return ""
         }
         
@@ -30,12 +30,14 @@ return (
        <div className="inputField">
        <div id="form">
             <h1> Image-Editor</h1>
+            <div className="text-center">
         <input type="file" multiple name="images" accept="image/*" id="img" onChange={e=>handleClick(e.target.files)} placeholder="Select Images" required></input><br></br>
+        </div>
         <Link to={{pathname:'/Edit', state:{Sources:src}}}><button className="btn btn-primary  btn-large">Edit Photos</button></Link>
            </div>
            </div>
         <div className="img-div">
-        <img src='Images/undraw_edit_photo_2m6o.svg' alt="Right-Background"></img>
+        <img src='Images/undraw_edit_photo_2m6o.svg' alt="Right-Background" id="img-fluid"></img>
         </div>
         </div>
 
