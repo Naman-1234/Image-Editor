@@ -53,8 +53,10 @@ font-family: 'Open Sans', sans-serif;
 }
 #form
 {
- display: grid;
- place-items: center;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
 }
 /* input[type=file]
 {
@@ -119,6 +121,49 @@ border-radius:12%;
   #img-fluid
   {
     scale:2;
+  }
+}
+@media only screen and (max-width:500px)
+{ 
+.containers
+{
+  display: flex;
+  flex-direction: column;
+}
+/* .inputField
+{
+  width:100vh;
+  height:100vh;
+} */
+.img-div{
+  width:100vw;
+  height: 100vh;
+}
+#form
+{
+  width:100vw;
+  height: 100vh;
+  /* margin-top:30vh; */
+  padding-bottom:35%;
+}
+#form
+  {
+    line-height: 2em;
+  }
+  #form h1
+  {
+    font-size:40px;
+    margin-bottom:5%;
+  }
+  #form button{
+    width: 50vw; 
+    font-size: 1em;
+    border-radius: 11px;
+  }
+ 
+  .img-div{
+    display: grid;
+    place-items: center;
   }
 }
 

@@ -81,3 +81,18 @@
 
   } 
 }
+@media (max-width:500px)
+{
+  .sidebar-item {
+    font-size:0.6em;
+    padding:0.3rem;
+    padding-top:1rem;
+  } 
+  
+.btn 
+{
+  font-size:0.7em;
+
+}
+
+}

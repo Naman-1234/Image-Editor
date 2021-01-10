@@ -19,3 +19,18 @@
     justify-content: center;
     position: relative;
 }
+@media (max-width:500px)
+{
+    .afterDownloadDiv h1
+    {
+        font-size:1.3em;
+    }
+    .afterDownloadDiv button
+    {
+        font-size: 1.3em;
+    }
+    .containers2
+    {
+        padding-bottom: 35% ;
+    }
+}
