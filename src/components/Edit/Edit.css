@@ -1,98 +1,99 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    
-  }
-  
-  body {
-    margin: 0;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 
-  .img
-  {
-    display: block;
-    width: 42%;
-    height:42%; 
-  }
-  .slider
-  {
-    margin:0 auto;
-    width:70vw;
-    
-  }
-  .sidebar {
-    grid-area: sidebar;
-    background-color: hsl(46, 97%, 25%);
-    border-left: 1px solid hsl(46, 97%, 25%);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .sidebar-item {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background-color: hsl(46, 97%, 25%);
-    padding: 1rem;
-    position: relative;
-    transition: background-color 150ms;
-    color:#fff;
-    font-size: 1.5em;
-  }
-  
-  .sidebar-item:hover, .si  debar-item:focus {
-    background-color: hsl(64, 93%, 36%);
-  }
-  
-  .sidebar-item.active {
-    background-color:  hsl(64, 93%, 36%);
-  }
-  
-  
-  .sidebar-item:last-child::after {
-    display: none;
-  }
-  
-  .canvasObject
-  {
-    display: none;
-  }
-  #go_to_download
-{
+}
+
+body {
+  margin: 0;
+}
+
+.img {
+  display: block;
+  width: 42%;
+  height: 42%;
+}
+
+.slider {
+  margin: 0 auto;
+  width: 70vw;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: hsl(46, 97%, 25%);
+  border-left: 1px solid hsl(46, 97%, 25%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sidebar-item {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: hsl(46, 97%, 25%);
+  padding: 1rem;
+  position: relative;
+  transition: background-color 150ms;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.sidebar-item:hover,
+.si debar-item:focus {
+  background-color: hsl(64, 93%, 36%);
+}
+
+.sidebar-item.active {
+  background-color: hsl(64, 93%, 36%);
+}
+
+
+.sidebar-item:last-child::after {
   display: none;
 }
 
-.btn 
-{
-  font-size:1.5em;
+.canvasObject {
+  display: none;
+}
+
+/* Hiding a button but clicking it from js */
+#go_to_download {
+  display: none;
+}
+
+.downloadButton {
+  font-size: 1.5em;
 
 }
-@media (min-width:686px) and (max-width:880px)
-{
-  .sidebar-item {
-    font-size:1.1em;
-  } 
-}
-@media (min-width:500px) and (max-width:687px)
-{
-  .sidebar-item {
-    font-size:1em;
-    padding:0.5rem;
 
-  } 
-}
-@media (max-width:500px)
-{
+/* Making Responsive*/
+@media (min-width:686px) and (max-width:880px) {
   .sidebar-item {
-    font-size:0.6em;
-    padding:0.3rem;
-    padding-top:1rem;
-  } 
-  
-.btn 
-{
-  font-size:0.7em;
-
+    font-size: 1.1em;
+  }
 }
+
+@media (min-width:500px) and (max-width:687px) {
+  .sidebar-item {
+    font-size: 1em;
+    padding: 0.5rem;
+
+  }
+}
+
+@media (max-width:500px) {
+  .sidebar-item {
+    font-size: 0.6em;
+    padding: 0.3rem;
+    padding-top: 1rem;
+  }
+
+  .downloadButton {
+    font-size: 0.7em;
+
+  }
 
 }
