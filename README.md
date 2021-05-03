@@ -1,6 +1,6 @@
 # Table of Contents:
-- About
-- Getting Started
+- [About](https://github.com/Naman-1234/Image-Editor#about)
+- [Getting Started](https://github.com/Naman-1234/Image-Editor#getting-started-with-create-react-app)
 
 
 # About
