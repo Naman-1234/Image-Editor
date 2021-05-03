@@ -7,7 +7,7 @@ export default function FrontPage()
 {
 
     const [src,setsrc]=useState([]);
-    function handleClick(obj)
+    const handleClick = (obj) =>
     {
         Object.keys(obj).map((key)=>{
         setsrc(

@@ -1,169 +1,149 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 
-*,*::before,*::after{
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
+body {
+  font-family: 'Open Sans', sans-serif;
 }
-body
-{
-font-family: 'Open Sans', sans-serif;
+
+.img {
+  width: 40%;
+  height: 40%;
+  float: left;
+  margin: 3%;
 }
-.img
-{
-    width:40%;
-    height:40%;
-    float: left;
-    margin:3%;
-}
-/* .frontpage > h1
-{
-  text-align: center;
-  font-size:50px;
-  margin-bottom:2%;
-} */
-.inputField
-{
+
+.inputField {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.containers
-{
+
+.containers {
   display: flex;
   flex-direction: row;
 }
-.inputField
-{
-  flex:1;
-  background-color:#6C63FF;
-  height:100vh;
-  color:#fff;
+
+.inputField {
+  flex: 1;
+  background-color: #6C63FF;
+  height: 100vh;
+  color: #fff;
 }
-.img-div
-{
-  flex:1;
+
+.img-div {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.img-div img{
-  width:80%;
-  height:100%;
+
+.img-div img {
+  width: 80%;
+  height: 100%;
 }
-#form
-{
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-/* input[type=file]
-{
-border-radius:12%;
-} */
-#form h1
-{
-  font-size:90px;
+
+#form h1 {
+  font-size: 90px;
 }
-#form button{
+
+#form button {
   width: 15vw;
   font-size: 1.7em;
   border-radius: 11px;
 }
 
-@media (min-width:960px) and (max-width:1100px)
-{
-  #form h1
-  {
-    font-size:60px;
+@media (min-width:960px) and (max-width:1100px) {
+  #form h1 {
+    font-size: 60px;
   }
-  #form button{
+
+  #form button {
     width: 15vw;
     font-size: 1.3em;
     border-radius: 11px;
   }
-  
+
 }
-@media (min-width:768px) and (max-width:959px)
-{
-  #form h1
-  {
-    font-size:50px;
+
+@media (min-width:768px) and (max-width:959px) {
+  #form h1 {
+    font-size: 50px;
   }
-  #form button{
+
+  #form button {
     width: 20vw;
     font-size: 1.3em;
     border-radius: 11px;
   }
-  
+
 }
-@media (min-width:500px ) and (max-width:767px)
-{
-  #form
-  {
+
+@media (min-width:500px) and (max-width:767px) {
+  #form {
     line-height: 2em;
   }
-  #form h1
-  {
-    font-size:30px;
+
+  #form h1 {
+    font-size: 30px;
   }
-  #form button{
-    width: 25vw; 
+
+  #form button {
+    width: 25vw;
     font-size: 1em;
     border-radius: 11px;
   }
-  .img-div img{
-    min-width:80%;
-    width:100%;
-    height:100%;
+
+  .img-div img {
+    min-width: 80%;
+    width: 100%;
+    height: 100%;
   }
-  #img-fluid
-  {
-    scale:2;
+
+  #img-fluid {
+    scale: 2;
   }
 }
-@media only screen and (max-width:500px)
-{ 
-.containers
-{
-  display: flex;
-  flex-direction: column;
-}
-/* .inputField
-{
-  width:100vh;
-  height:100vh;
-} */
-.img-div{
-  width:100vw;
-  height: 100vh;
-}
-#form
-{
-  width:100vw;
-  height: 100vh;
-  /* margin-top:30vh; */
-  padding-bottom:35%;
-}
-#form
-  {
+
+@media only screen and (max-width:500px) {
+  .containers {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-div {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #form {
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 35%;
+  }
+
+  #form {
     line-height: 2em;
   }
-  #form h1
-  {
-    font-size:40px;
-    margin-bottom:5%;
+
+  #form h1 {
+    font-size: 40px;
+    margin-bottom: 5%;
   }
-  #form button{
-    width: 50vw; 
+
+  #form button {
+    width: 50vw;
     font-size: 1em;
     border-radius: 11px;
   }
- 
-  .img-div{
+
+  .img-div {
     display: grid;
     place-items: center;
   }
 }
-
